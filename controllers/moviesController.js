@@ -21,6 +21,16 @@ module.exports = {
     console.log('Getting movies');
     res.status(200).send(Movies);
   },
+  searchQuery: function(req, res, next) {
+    console.log('queries', req.query)
+    if (req.query.operator === 'gt') {
+      var rating = req.query.rating
+    }
+
+  } ,
+  search: function(req, res, next) {
+    console.log('params', req.params)
+  },
   update: function(req, res, next) {
     console.log('Updating', req.params.id);
     // .map returns a new array with the values that you decide. This is basically copying everything over
